@@ -1,0 +1,17 @@
+0.7.0
+ctags
+libcap-dev
+pkgconfig(egl)
+pkgconfig(freerdp2)
+pkgconfig(libavcodec)
+pkgconfig(libavformat)
+pkgconfig(libavutil)
+pkgconfig(libcap)
+pkgconfig(libinput)
+pkgconfig(libpng)
+pkgconfig(libudev)
+pkgconfig(pixman-1)
+pkgconfig(wayland-protocols)
+pkgconfig(wayland-server)
+pkgconfig(winpr2)
+pkgconfig(xcb-errors)
