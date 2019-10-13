@@ -283,6 +283,7 @@ libwlroots.so.3:wlr_positioner_v6_invert_y
 libwlroots.so.3:wlr_presentation_create
 libwlroots.so.3:wlr_presentation_destroy
 libwlroots.so.3:wlr_presentation_send_surface_presented
+libwlroots.so.3:wlr_presentation_surface_sampled
 libwlroots.so.3:wlr_primary_selection_source_destroy
 libwlroots.so.3:wlr_primary_selection_source_init
 libwlroots.so.3:wlr_primary_selection_source_send
