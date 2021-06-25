@@ -8,9 +8,8 @@ libinput.so.10
 libm.so.6
 libpixman-1.so.0
 librt.so.1
-libsystemd.so.0
+libseat.so.1
 libudev.so.1
-libuuid.so.1
 libwayland-client.so.0
 libwayland-server.so.0
 libxkbcommon.so.0
