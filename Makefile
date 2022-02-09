@@ -1,5 +1,5 @@
 PKG_NAME := wlroots
-URL = https://github.com/swaywm/wlroots/archive/0.14.1/wlroots-0.14.1.tar.gz
+URL = https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
