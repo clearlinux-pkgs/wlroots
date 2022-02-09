@@ -6,13 +6,14 @@
 #
 Name     : wlroots
 Version  : 0.15.1
-Release  : 9
+Release  : 10
 URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz
 Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz
 Source1  : https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 MIT
+Requires: wlroots-filemap = %{version}-%{release}
 Requires: wlroots-lib = %{version}-%{release}
 Requires: wlroots-license = %{version}-%{release}
 BuildRequires : buildreq-meson
@@ -47,10 +48,19 @@ Requires: wlroots = %{version}-%{release}
 dev components for the wlroots package.
 
 
+%package filemap
+Summary: filemap components for the wlroots package.
+Group: Default
+
+%description filemap
+filemap components for the wlroots package.
+
+
 %package lib
 Summary: lib components for the wlroots package.
 Group: Libraries
 Requires: wlroots-license = %{version}-%{release}
+Requires: wlroots-filemap = %{version}-%{release}
 
 %description lib
 lib components for the wlroots package.
@@ -67,13 +77,16 @@ license components for the wlroots package.
 %prep
 %setup -q -n wlroots-0.15.1
 cd %{_builddir}/wlroots-0.15.1
+pushd ..
+cp -a wlroots-0.15.1 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644423870
+export SOURCE_DATE_EPOCH=1644424631
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -84,12 +97,16 @@ export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir
+CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -O3" CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 " LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddiravx2
+ninja -v -C builddiravx2
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/wlroots
 cp %{_builddir}/wlroots-0.15.1/LICENSE %{buildroot}/usr/share/package-licenses/wlroots/cf7d4b8dccadb7713df91a14a5d9f5b53f493f3c
 cp %{_builddir}/wlroots-0.15.1/tinywl/LICENSE %{buildroot}/usr/share/package-licenses/wlroots/df855b408256fed71fe29eb1382d03841508d0f2
+DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 DESTDIR=%{buildroot} ninja -C builddir install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -192,9 +209,14 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/lib64/libwlroots.so
 /usr/lib64/pkgconfig/wlroots.pc
 
+%files filemap
+%defattr(-,root,root,-)
+/usr/share/clear/filemap/filemap-wlroots
+
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libwlroots.so.10
+/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)
