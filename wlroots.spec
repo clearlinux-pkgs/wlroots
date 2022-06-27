@@ -6,14 +6,13 @@
 #
 Name     : wlroots
 Version  : 0.15.1
-Release  : 10
+Release  : 11
 URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz
 Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz
 Source1  : https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.15.1/downloads/wlroots-0.15.1.tar.gz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 MIT
-Requires: wlroots-filemap = %{version}-%{release}
 Requires: wlroots-lib = %{version}-%{release}
 Requires: wlroots-license = %{version}-%{release}
 BuildRequires : buildreq-meson
@@ -48,19 +47,10 @@ Requires: wlroots = %{version}-%{release}
 dev components for the wlroots package.
 
 
-%package filemap
-Summary: filemap components for the wlroots package.
-Group: Default
-
-%description filemap
-filemap components for the wlroots package.
-
-
 %package lib
 Summary: lib components for the wlroots package.
 Group: Libraries
 Requires: wlroots-license = %{version}-%{release}
-Requires: wlroots-filemap = %{version}-%{release}
 
 %description lib
 lib components for the wlroots package.
@@ -86,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644424631
+export SOURCE_DATE_EPOCH=1656345179
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -106,7 +96,7 @@ cp %{_builddir}/wlroots-0.15.1/LICENSE %{buildroot}/usr/share/package-licenses/w
 cp %{_builddir}/wlroots-0.15.1/tinywl/LICENSE %{buildroot}/usr/share/package-licenses/wlroots/df855b408256fed71fe29eb1382d03841508d0f2
 DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 DESTDIR=%{buildroot} ninja -C builddir install
-/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot}/usr/share/clear/optimized-elf/ %{buildroot}/usr/share/clear/filemap/filemap-%{name}
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -206,17 +196,14 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/wlr/version.h
 /usr/include/wlr/xcursor.h
 /usr/include/wlr/xwayland.h
+/usr/lib64/glibc-hwcaps/x86-64-v3/libwlroots.so
 /usr/lib64/libwlroots.so
 /usr/lib64/pkgconfig/wlroots.pc
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-wlroots
-
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/glibc-hwcaps/x86-64-v3/libwlroots.so.10
 /usr/lib64/libwlroots.so.10
-/usr/share/clear/optimized-elf/lib*
 
 %files license
 %defattr(0644,root,root,0755)
