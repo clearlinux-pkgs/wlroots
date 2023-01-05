@@ -4,7 +4,7 @@
 #
 Name     : wlroots
 Version  : 0.16.1
-Release  : 16
+Release  : 17
 URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.16.1/wlroots-0.16.1.tar.gz
 Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.16.1/wlroots-0.16.1.tar.gz
 Summary  : No detailed summary available
