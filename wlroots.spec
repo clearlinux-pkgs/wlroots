@@ -5,7 +5,7 @@
 #
 Name     : wlroots
 Version  : 0.16.2
-Release  : 19
+Release  : 20
 URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.16.2/wlroots-0.16.2.tar.gz
 Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.16.2/wlroots-0.16.2.tar.gz
 Summary  : No detailed summary available
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683242583
+export SOURCE_DATE_EPOCH=1685481573
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -108,7 +108,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libwlroots.so
 /usr/include/wlr/backend.h
 /usr/include/wlr/backend/drm.h
 /usr/include/wlr/backend/headless.h
