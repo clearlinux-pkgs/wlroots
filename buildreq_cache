@@ -1,4 +1,8 @@
-0.16.2
+0.17.0
+cairo-dev
+pkgconfig(cairo)
 pkgconfig(gbm)
+pkgconfig(libdisplay-info)
 pkgconfig(libdrm)
+pkgconfig(libliftoff)
 pkgconfig(libseat)
