@@ -3,3 +3,5 @@
 xwayland
 systemd-dev
 clr-hardware-files
+xwayland-dev
+Vulkan-Loader-dev
