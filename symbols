@@ -14,6 +14,7 @@ libwlroots.so.12:wlr_backend_destroy
 libwlroots.so.12:wlr_backend_finish
 libwlroots.so.12:wlr_backend_get_drm_fd
 libwlroots.so.12:wlr_backend_init
+libwlroots.so.12:wlr_backend_is_drm
 libwlroots.so.12:wlr_backend_is_headless
 libwlroots.so.12:wlr_backend_is_libinput
 libwlroots.so.12:wlr_backend_is_multi
@@ -83,8 +84,14 @@ libwlroots.so.12:wlr_dmabuf_attributes_copy
 libwlroots.so.12:wlr_dmabuf_attributes_finish
 libwlroots.so.12:wlr_dmabuf_v1_buffer_try_from_buffer_resource
 libwlroots.so.12:wlr_drag_create
+libwlroots.so.12:wlr_drm_backend_create
+libwlroots.so.12:wlr_drm_backend_get_non_master_fd
 libwlroots.so.12:wlr_drm_buffer_try_from_resource
+libwlroots.so.12:wlr_drm_connector_add_mode
+libwlroots.so.12:wlr_drm_connector_get_id
+libwlroots.so.12:wlr_drm_connector_get_panel_orientation
 libwlroots.so.12:wlr_drm_create
+libwlroots.so.12:wlr_drm_create_lease
 libwlroots.so.12:wlr_drm_dumb_allocator_create
 libwlroots.so.12:wlr_drm_format_add
 libwlroots.so.12:wlr_drm_format_copy
@@ -99,6 +106,14 @@ libwlroots.so.12:wlr_drm_format_set_get
 libwlroots.so.12:wlr_drm_format_set_has
 libwlroots.so.12:wlr_drm_format_set_intersect
 libwlroots.so.12:wlr_drm_format_set_union
+libwlroots.so.12:wlr_drm_lease_request_v1_grant
+libwlroots.so.12:wlr_drm_lease_request_v1_reject
+libwlroots.so.12:wlr_drm_lease_terminate
+libwlroots.so.12:wlr_drm_lease_v1_manager_create
+libwlroots.so.12:wlr_drm_lease_v1_manager_offer_output
+libwlroots.so.12:wlr_drm_lease_v1_manager_withdraw_output
+libwlroots.so.12:wlr_drm_lease_v1_revoke
+libwlroots.so.12:wlr_drm_mode_get_info
 libwlroots.so.12:wlr_egl_create_image_from_dmabuf
 libwlroots.so.12:wlr_egl_create_with_context
 libwlroots.so.12:wlr_egl_create_with_drm_fd
@@ -251,6 +266,7 @@ libwlroots.so.12:wlr_output_head_v1_state_apply
 libwlroots.so.12:wlr_output_init
 libwlroots.so.12:wlr_output_init_render
 libwlroots.so.12:wlr_output_is_direct_scanout_allowed
+libwlroots.so.12:wlr_output_is_drm
 libwlroots.so.12:wlr_output_is_headless
 libwlroots.so.12:wlr_output_is_wl
 libwlroots.so.12:wlr_output_is_x11
