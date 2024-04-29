@@ -7,7 +7,7 @@
 #
 Name     : wlroots
 Version  : 0.17.3
-Release  : 28
+Release  : 29
 URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.17.3/wlroots-0.17.3.tar.gz
 Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.17.3/wlroots-0.17.3.tar.gz
 Summary  : No detailed summary available
