@@ -1,4 +1,4 @@
-0.17.3
+0.17.4
 cairo-dev
 pkgconfig(cairo)
 pkgconfig(gbm)
