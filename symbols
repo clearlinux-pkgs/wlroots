@@ -409,6 +409,7 @@ libwlroots-0.18.so:wlr_renderer_init_wl_display
 libwlroots-0.18.so:wlr_renderer_init_wl_shm
 libwlroots-0.18.so:wlr_renderer_is_gles2
 libwlroots-0.18.so:wlr_renderer_is_pixman
+libwlroots-0.18.so:wlr_renderer_is_vk
 libwlroots-0.18.so:wlr_scene_attach_output_layout
 libwlroots-0.18.so:wlr_scene_buffer_create
 libwlroots-0.18.so:wlr_scene_buffer_from_node
@@ -652,6 +653,7 @@ libwlroots-0.18.so:wlr_texture_from_pixels
 libwlroots-0.18.so:wlr_texture_init
 libwlroots-0.18.so:wlr_texture_is_gles2
 libwlroots-0.18.so:wlr_texture_is_pixman
+libwlroots-0.18.so:wlr_texture_is_vk
 libwlroots-0.18.so:wlr_texture_preferred_read_format
 libwlroots-0.18.so:wlr_texture_read_pixel_options_get_data
 libwlroots-0.18.so:wlr_texture_read_pixels
@@ -666,6 +668,13 @@ libwlroots-0.18.so:wlr_transient_seat_v1_ready
 libwlroots-0.18.so:wlr_viewporter_create
 libwlroots-0.18.so:wlr_virtual_keyboard_manager_v1_create
 libwlroots-0.18.so:wlr_virtual_pointer_manager_v1_create
+libwlroots-0.18.so:wlr_vk_renderer_create_with_drm_fd
+libwlroots-0.18.so:wlr_vk_renderer_get_device
+libwlroots-0.18.so:wlr_vk_renderer_get_instance
+libwlroots-0.18.so:wlr_vk_renderer_get_physical_device
+libwlroots-0.18.so:wlr_vk_renderer_get_queue_family
+libwlroots-0.18.so:wlr_vk_texture_get_image_attribs
+libwlroots-0.18.so:wlr_vk_texture_has_alpha
 libwlroots-0.18.so:wlr_wl_backend_create
 libwlroots-0.18.so:wlr_wl_backend_get_remote_display
 libwlroots-0.18.so:wlr_wl_output_create

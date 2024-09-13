@@ -5,3 +5,5 @@ systemd-dev
 clr-hardware-files
 xwayland-dev
 Vulkan-Loader-dev
+Vulkan-Headers-dev
+glslang-bin
