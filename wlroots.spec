@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : wlroots
-Version  : 0.18.0
-Release  : 33
-URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.0/wlroots-0.18.0.tar.gz
-Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.0/wlroots-0.18.0.tar.gz
+Version  : 0.18.1
+Release  : 34
+URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.1/wlroots-0.18.1.tar.gz
+Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.1/wlroots-0.18.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 MIT
@@ -71,10 +71,10 @@ license components for the wlroots package.
 
 
 %prep
-%setup -q -n wlroots-0.18.0
-cd %{_builddir}/wlroots-0.18.0
+%setup -q -n wlroots-0.18.1
+cd %{_builddir}/wlroots-0.18.1
 pushd ..
-cp -a wlroots-0.18.0 buildavx2
+cp -a wlroots-0.18.1 buildavx2
 popd
 
 %build
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1726247783
+export SOURCE_DATE_EPOCH=1726840741
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
