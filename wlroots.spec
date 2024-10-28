@@ -7,12 +7,13 @@
 #
 Name     : wlroots
 Version  : 0.18.1
-Release  : 37
+Release  : 38
 URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.1/wlroots-0.18.1.tar.gz
 Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.1/wlroots-0.18.1.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CC0-1.0 MIT
+Requires: wlroots-lib = %{version}-%{release}
 Requires: wlroots-license = %{version}-%{release}
 BuildRequires : Vulkan-Headers-dev
 BuildRequires : Vulkan-Loader-dev
@@ -55,11 +56,21 @@ compositor; or about 60,000 lines of code you were going to write anyway.
 %package dev
 Summary: dev components for the wlroots package.
 Group: Development
+Requires: wlroots-lib = %{version}-%{release}
 Provides: wlroots-devel = %{version}-%{release}
 Requires: wlroots = %{version}-%{release}
 
 %description dev
 dev components for the wlroots package.
+
+
+%package lib
+Summary: lib components for the wlroots package.
+Group: Libraries
+Requires: wlroots-license = %{version}-%{release}
+
+%description lib
+lib components for the wlroots package.
 
 
 %package license
@@ -82,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1728942055
+export SOURCE_DATE_EPOCH=1730147988
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -134,7 +145,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libwlroots-0.18.so
 /usr/include/wlroots-0.18/wlr/backend.h
 /usr/include/wlroots-0.18/wlr/backend/drm.h
 /usr/include/wlroots-0.18/wlr/backend/headless.h
@@ -249,8 +259,12 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/wlroots-0.18/wlr/xwayland/server.h
 /usr/include/wlroots-0.18/wlr/xwayland/shell.h
 /usr/include/wlroots-0.18/wlr/xwayland/xwayland.h
-/usr/lib64/libwlroots-0.18.so
 /usr/lib64/pkgconfig/wlroots-0.18.pc
+
+%files lib
+%defattr(-,root,root,-)
+/V3/usr/lib64/libwlroots-0.18.so
+/usr/lib64/libwlroots-0.18.so
 
 %files license
 %defattr(0644,root,root,0755)
