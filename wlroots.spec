@@ -7,7 +7,7 @@
 #
 Name     : wlroots
 Version  : 0.18.1
-Release  : 36
+Release  : 37
 URL      : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.1/wlroots-0.18.1.tar.gz
 Source0  : https://gitlab.freedesktop.org/wlroots/wlroots/-/archive/0.18.1/wlroots-0.18.1.tar.gz
 Summary  : No detailed summary available
